@@ -1,5 +1,13 @@
+/// Custom error for MapFields
 abstract class MapFieldsError implements Exception {}
 
+/// Erro for invalid json string or map.
+class InvalidMapStringObjectError extends MapFieldsError {
+  @override
+  String toString() => 'This map is not a valid object';
+}
+
+/// Error for missing required field.
 class MapFieldsErrorMissingRequiredField extends MapFieldsError {
   final String key;
 
@@ -9,6 +17,7 @@ class MapFieldsErrorMissingRequiredField extends MapFieldsError {
   String toString() => 'Missing required field $key';
 }
 
+/// Unknown error for MapFields.
 class UnknownErrorMapFieldsError extends MapFieldsError {
   final String key;
   final Object exception;
@@ -22,11 +31,7 @@ class UnknownErrorMapFieldsError extends MapFieldsError {
   String toString() => 'Unknown error on field $key - $exception';
 }
 
-class InvalidMapStringObjectError extends MapFieldsError {
-  @override
-  String toString() => 'This map is not a valid object';
-}
-
+/// Error on converting value.
 class ConvertMapStringFieldError extends MapFieldsError {
   final String key;
   final dynamic value;
