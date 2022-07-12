@@ -1,7 +1,7 @@
 
-# MapFields 
-A package for handling fields in maps for dart in a simple and fast way.
+# MapFields
 
+A package for handling fields in maps for dart in a simple and fast way.
 
 ## Features
 
