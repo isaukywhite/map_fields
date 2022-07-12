@@ -5,25 +5,25 @@ A package for handling fields in maps for dart in a simple and fast way.
 
 ## Features
 
-- MapFields.load(Map<String, dynamic> map)
-- MapFields.getString(String key, [String? defaultValue])
-- MapFields.getInt(String key, [int? defaultValue])
-- MapFields.getDouble(String key, [double? defaultValue])
-- MapFields.getBool(String key, [bool? defaultValue])
-- MapFields.getDateTime(String key, [DateTime? defaultValue])
-- MapFields.getList\<T>(String key, [List\<T> defaultValue])
-- MapFields.getStringNullable(String key)
-- MapFields.getIntNullable(String key)
-- MapFields.getDoubleNullable(String key)
-- MapFields.getBool(String key)
-- MapFields.getDateTime(String key)
-- MapFields.getList\<T>(String key)
+- MapFields.load()
+- getString
+- getInt
+- getDouble
+- getBool
+- getDateTime
+- getList\<T>
+- getStringNullable
+- getIntNullable
+- getDoubleNullable
+- getBoolNullable
+- getDateTimeNullable
+- getListNullable\<T>
 
 ## Installation
 
 ```yml
 dependencies:
-  map_fields: latest
+  map_fields: any
 ```
 
 ## Usage
