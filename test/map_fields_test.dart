@@ -3,6 +3,14 @@ import 'package:map_fields/src/map_fields_base.dart';
 import 'package:test/test.dart';
 
 void main() {
+  test('List', () {
+    final map = '{"key": [{"key": "value","key2": 1}]}';
+    final mapFields = MapFields.load(map);
+    expect(
+      mapFields.getList<Map<String, dynamic>>('key'),
+      isA<List<Map<String, dynamic>>>(),
+    );
+  });
   group('MapFieldsTests => String', () {
     test('normal', () {
       final map = <String, dynamic>{'key': 'value'};

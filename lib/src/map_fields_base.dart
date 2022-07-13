@@ -147,7 +147,7 @@ class MapFields {
   /// Get the key value as List<T>?.
   List<T>? getListNullable<T>(String key) {
     try {
-      return map[key] as List<T>?;
+      return (map[key] as List?)?.cast<T>();
     } catch (e) {
       return null;
     }

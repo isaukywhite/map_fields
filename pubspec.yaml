@@ -1,6 +1,6 @@
 name: map_fields
 description: Get fields from a map, simply, performing error handling errors.
-version: 0.0.2
+version: 0.0.3
 repository: https://github.com/isaukywhite/map_fields
 
 environment:

@@ -1,5 +1,9 @@
 # ChangeLog
 
+## 0.0.3
+
+- Cast list corrections
+
 ## 0.0.2
 
 - Documentation
