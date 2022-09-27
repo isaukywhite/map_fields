@@ -1,5 +1,9 @@
 # ChangeLog
 
+## 0.0.4
+
+- Added translation (en-us/pt-br)
+
 ## 0.0.3
 
 - Cast list corrections
