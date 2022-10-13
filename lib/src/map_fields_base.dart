@@ -152,6 +152,29 @@ class MapFields {
       return null;
     }
   }
+
+  /// Get the key value as Map<T, D>.
+  Map<T, D> getMap<T, D>(String key, [Map<T, D>? defaultValue]) {
+    return _getField<Map<T, D>>(
+      key,
+      defaultValue,
+      getMapNullable,
+    );
+  }
+
+  /// Get the key value as Map<T, D>?.
+  Map<T, D>? getMapNullable<T, D>(String key) {
+    try {
+      if (map.containsKey(key)) {
+        final value = map[key] is String ? json.decode(map[key]) : map[key];
+        final valueTreatment = json.decode(json.encode(value)) as Map<T, D>;
+        return valueTreatment;
+      }
+      return null;
+    } catch (e) {
+      return null;
+    }
+  }
 }
 
 // Extension for DateTime.convert.

@@ -70,4 +70,55 @@ void main() {
       );
     });
   });
+
+  group('MapFieldsTests => Map', () {
+    test('normal as String', () {
+      final map = '{"key": {"teste": 123, "teste2": "123"}}';
+      final mapFields = MapFields.load(map);
+      expect(
+        mapFields.getMap<String, dynamic>('key'),
+        {'teste': 123, 'teste2': '123'},
+      );
+    });
+    test('normal', () {
+      final map = <String, dynamic>{
+        'key': {'teste': 123, 'teste2': '123'}
+      };
+      final mapFields = MapFields.load(map);
+      expect(
+        mapFields.getMap<String, dynamic>('key'),
+        {'teste': 123, 'teste2': '123'},
+      );
+    });
+    test('is null, with default value', () {
+      final map = <String, dynamic>{'key': null};
+      final mapFields = MapFields.load(map);
+      expect(
+        mapFields.getMap<String, dynamic>(
+          'key',
+          {},
+        ),
+        {},
+      );
+    });
+    test('key does not exist, with default value', () {
+      final map = <String, dynamic>{};
+      final mapFields = MapFields.load(map);
+      expect(mapFields.getMap<String, dynamic>('key', {}), {});
+    });
+    test('key does not exist as String, with default value', () {
+      final map = '{}';
+      final mapFields = MapFields.load(map);
+      expect(mapFields.getMap<String, dynamic>('key', {}), {});
+    });
+    test('key does not exist, without default value - return throw', () {
+      final map = <String, dynamic>{};
+      final mapFields = MapFields.load(map);
+
+      expect(
+        () => mapFields.getMap<String, dynamic>('key'),
+        throwsA(isA<MapFieldsErrorMissingRequiredField>()),
+      );
+    });
+  });
 }
