@@ -1,5 +1,9 @@
 # ChangeLog
 
+## 0.0.5
+
+- Add getMap
+
 ## 0.0.4
 
 - Added translation (en-us/pt-br)
